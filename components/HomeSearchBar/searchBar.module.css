@@ -1,0 +1,41 @@
+.box__search{
+    @apply absolute flex flex-wrap h-auto p-2 shadow rounded-md bg-white w-5/6;
+    bottom: -20%
+}
+.search {
+    @apply w-full flex justify-between
+}
+.search [type=search]{
+    @apply text-base p-3 font-semibold bg-gray-100 m-1 text-gray-600 outline-none rounded w-4/6
+}
+.search [type=search]:focus{
+     @apply text-gray-700 bg-gray-200
+}
+.footer__search{
+    @apply w-full items-center text-xs h-auto flex
+}
+.button{
+    @apply p-3 bg-green-400 w-2/6 m-1 text-base font-semibold text-white rounded
+}
+.button:hover{
+    @apply bg-green-600
+}
+@screen lg{
+    .button{
+        @apply m-2
+    }
+    .footer__search{
+        @apply px-2 text-base
+    }
+    .search{
+        @apply p-1;
+    }
+    .search [type=search]{
+        @apply m-2
+    }
+}
+@screen md{
+    .box__search{
+        bottom: -30%;
+    }
+}

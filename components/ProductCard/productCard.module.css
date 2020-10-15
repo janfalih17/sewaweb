@@ -1,0 +1,12 @@
+.product__card {
+    @apply h-auto w-48 cursor-pointer flex-none rounded mx-2 my-5 shadow bg-white
+}
+.product__title {
+    @apply block font-semibold text-base
+}
+.product__card:hover{
+    @apply shadow-lg
+}
+.product__card:hover .product__title{
+    @apply text-green-500
+}
