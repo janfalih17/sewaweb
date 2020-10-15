@@ -3,7 +3,7 @@ import style from './searchBar.module.css'
 const HomeSearchBar = () => {
   const [keyword, setKeyword] = useState(null);
   const onPress = () => {
-    window.location.href = 'http://localhost:3000/janfalih/' + keyword;
+    window.location.href = 'http://sewaweb.vercel.app/janfalih/' + keyword;
   }
     return(
       <>

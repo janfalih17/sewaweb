@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './productCard.module.css'
 const ProductCard = () => (
-    <a onClick={() => window.location.href = "http://localhost:3000/janfalih/saya akan membuat website ppob"} className={style.product__card}>
+    <a onClick={() => window.location.href = "http://sewaweb.vercel.app/janfalih/saya akan membuat website ppob"} className={style.product__card}>
         <div className="relative bg-gray-500 h-32 rounded-t w-full">
             <a className="absolute right-0 top-0 m-2 text-gray-600 hover:text-gray-800 text-2xl">
             <i class="fa fa-heart"></i>
