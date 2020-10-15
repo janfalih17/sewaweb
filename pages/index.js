@@ -48,11 +48,6 @@ export default function Home() {
       </div>
       <div className="flex h-auto w-full flex-wrap justify-center">
         <ProductCard/>
-        <div className="h-64 w-48 flex-none m-5 shadow bg-white"></div>
-      
-        <div className="h-64 w-48 flex-none m-5 shadow bg-white"></div>
-        <div className="h-64 w-48 flex-none m-5 shadow bg-white"></div>
-        <div className="h-64 w-48 flex-none m-5 shadow bg-white"></div>
       </div>
     </div>
     </>
