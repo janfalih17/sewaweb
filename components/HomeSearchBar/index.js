@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import style from './searchbar.module.css'
+import style from './searchBar.module.css'
 const HomeSearchBar = () => {
   const [keyword, setKeyword] = useState(null);
   const onPress = () => {
