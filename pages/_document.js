@@ -10,31 +10,53 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-            <meta name='application-name' content='PWA App' />
-            <meta name='apple-mobile-web-app-capable' content='yes' />
-            <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-            <meta name='apple-mobile-web-app-title' content='PWA App' />
-            <meta name='description' content='Best PWA App in the world' />
-            <meta name='format-detection' content='telephone=no' />
-            <meta name='mobile-web-app-capable' content='yes' />
-            <meta name='msapplication-TileColor' content='#2B5797' />
-            <meta name='msapplication-tap-highlight' content='no' />
-            <meta name='theme-color' content='#000000' />
-            <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png' />
-            <link rel='manifest' href='/manifest.json' />
-            <link rel='shortcut icon' href='/icons/favicon.ico' />
-            <meta name='twitter:card' content='summary' />
-            <meta name='twitter:url' content='https://sewaweb.vercel.app' />
-            <meta name='twitter:title' content='PWA App' />
-            <meta name='twitter:description' content='Best PWA App in the world' />
-            <meta name='twitter:image' content='https://sewaweb.vercel.app/icons/android-chrome-192x192.png' />
-            <meta name='twitter:creator' content='@janfalih' />
-            <meta property='og:type' content='website' />
-            <meta property='og:title' content='PWA App' />
-            <meta property='og:description' content='Best PWA App in the world' />
-            <meta property='og:site_name' content='PWA App' />
-            <meta property='og:url' content='https://sewaweb.vercel.app' />
-            <meta property='og:image' content='https://sewaweb.vercel.app/icons/apple-touch-icon.png' />
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="description" content="Description"/>
+<meta name="keywords" content="Keywords"/>
+<title>Page Title</title>
+
+{/* Android */}
+<meta name="theme-color" content="#48bb78"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+
+{/* iOS */}
+<meta name="apple-mobile-web-app-title" content="Application Title"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+{/* <!-- Windows  --> */}
+<meta name="msapplication-navbutton-color" content="#48bb78"/>
+<meta name="msapplication-TileColor" content="#48bb78"/>
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png"/>
+<meta name="msapplication-config" content="browserconfig.xml"/>
+
+{/* <!-- Pinned Sites  --> */}
+<meta name="application-name" content="Application Name"/>
+<meta name="msapplication-tooltip" content="Tooltip Text"/>
+<meta name="msapplication-starturl" content="/"/>
+
+{/* <!-- Tap highlighting  --> */}
+<meta name="msapplication-tap-highlight" content="no"/>
+
+{/* <!-- UC Mobile Browser  --> */}
+<meta name="full-screen" content="yes"/>
+<meta name="browsermode" content="application"/>
+
+{/* <!-- Disable night mode for this page  --> */}
+<meta name="nightmode" content="enable/disable"/>
+
+{/* <!-- Fitscreen  --> */}
+<meta name="viewport" content="uc-fitscreen=yes"/>
+
+{/* <!-- Layout mode --> */}
+<meta name="layoutmode" content="fitscreen/standard"/>
+
+{/* <!-- imagemode - show image even in text only mode  --> */}
+<meta name="imagemode" content="force"/>
+
+{/* <!-- Orientation  --> */}
+<meta name="screen-orientation" content="portrait"/>
         </Head>
         <body>
           <Main />

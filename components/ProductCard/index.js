@@ -4,7 +4,7 @@ const ProductCard = () => (
     <a onClick={() => window.location.href = "http://sewaweb.vercel.app/janfalih/saya akan membuat website ppob"} className={style.product__card}>
         <div className="relative bg-gray-500 h-32 rounded-t w-full">
             <a className="absolute right-0 top-0 m-2 text-gray-600 hover:text-gray-800 text-2xl">
-            <i class="fa fa-heart"></i>
+            <i className="fa fa-heart"></i>
             </a>
         </div>
         <div className=" h-40 flex flex-col justify-around w-full p-3">
