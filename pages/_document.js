@@ -57,6 +57,7 @@ class MyDocument extends Document {
 
 {/* <!-- Orientation  --> */}
 <meta name="screen-orientation" content="portrait"/>
+<link href="/manifest.json" rel="manifest"/>
         </Head>
         <body>
           <Main />

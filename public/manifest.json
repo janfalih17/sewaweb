@@ -3,7 +3,7 @@
     "background_color": "#48bb78",
     "display": "fullscreen",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/?source=pwa",
     "app_name": "SewaWeb",
     "short_name": "SW",
     "description": "Sewaweb Best Web",
