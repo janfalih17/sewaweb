@@ -4,7 +4,7 @@ module.exports = withPWA({
   pwa: {
     disable: false,
     register: true,
-    scope: '/app',
+    scope: '/',
     sw: 'sw.js',
     dest: 'public'
     //...
