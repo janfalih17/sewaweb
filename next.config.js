@@ -6,6 +6,7 @@ module.exports = withPWA({
     register: true,
     scope: '/app',
     sw: 'sw.js',
+    dest: 'public'
     //...
   }
 })
