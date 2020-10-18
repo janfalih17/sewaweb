@@ -27,11 +27,11 @@ const Product = () => {
     const [isFade, setFade] = useState(false);
     const [image, setImage] = useState({
         name: 'pemandanganLqip',
-        url : '../../public/gambar/pemandangan.jpg?lqip'});
+        url : require('../../public/gambar/pemandangan.jpg?lqip')});
     useEffect(() => {
             setImage({
                 name :'pemandanganOriginal',
-                url : '../../public/gambar/pemandangan.jpg?original'});
+                url :  require('../../public/gambar/pemandangan.jpg?original')});
 
     }, [setImage])
     const GalleryComponent = ({onClick, isActive}) => (
