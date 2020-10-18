@@ -25,6 +25,15 @@ const Product = () => {
     const { seller, product } = router.query;
     const  scrollLeft = useRef(null);
     const [isFade, setFade] = useState(false);
+    const [image, setImage] = useState({
+        name: 'pemandanganLqip',
+        url : '../../public/gambar/pemandangan.jpg?lqip'});
+    useEffect(() => {
+            setImage({
+                name :'pemandanganOriginal',
+                url : '../../public/gambar/pemandangan.jpg?original'});
+
+    }, [setImage])
     const GalleryComponent = ({onClick, isActive}) => (
         <li className="rounded-full self-center"
 			style={{
@@ -139,7 +148,7 @@ const Product = () => {
                             activeIndex={1}
                             hasBullets
                             BulletComponent={GalleryComponent}>
-                                <img src={require('../../public/gambar/pemandangan.jpg?lqip')} className="h-full w-full"/>
+                                <img src={image.url} alt={image.name} className="h-full w-full"/>
                                 <img src="/gambar/pemandangan.jpg" className="h-full w-full"/>
                                 <img src="/gambar/pemandangan.jpg" className="h-full w-full"/>
                         </Slider>

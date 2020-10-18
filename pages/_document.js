@@ -5,7 +5,6 @@ class MyDocument extends Document {
     const initialProps = await Document.getInitialProps(ctx);
     const originalRenderPage = ctx.renderPage;
     ctx.renderPage = () => {
-      console.log('never shown');
       originalRenderPage();
     };
     return { ...initialProps };
