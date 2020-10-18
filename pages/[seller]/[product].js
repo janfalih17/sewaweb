@@ -139,7 +139,7 @@ const Product = () => {
                             activeIndex={1}
                             hasBullets
                             BulletComponent={GalleryComponent}>
-                                <img src="/gambar/pemandangan.jpg" className="h-full w-full"/>
+                                <img src={require('../../public/gambar/pemandangan.jpg?lqip')} className="h-full w-full"/>
                                 <img src="/gambar/pemandangan.jpg" className="h-full w-full"/>
                                 <img src="/gambar/pemandangan.jpg" className="h-full w-full"/>
                         </Slider>
