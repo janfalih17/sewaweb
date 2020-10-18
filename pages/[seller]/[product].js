@@ -61,9 +61,6 @@ const Product = () => {
     return (
         <div  className="h-auto w-full">
             
-    <Head>
-        <script src="https://kit.fontawesome.com/839f4c104f.js" crossorigin="anonymous"></script>
-    </Head>
             <div className="relative ml-20w-full border-b flex bg-white justify-between p-5 lg:px-10">
                 <span className="text-2xl text-gray-700 font-bold">Logo</span>
                 <div className="w-auto hidden lg:flex">

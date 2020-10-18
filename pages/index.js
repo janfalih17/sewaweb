@@ -6,9 +6,6 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <>
-    <Head>
-    <script src="https://kit.fontawesome.com/839f4c104f.js" crossorigin="anonymous"></script>
-    </Head>
     <div className="h-auto w-full">
       <div className="w-full z-10 flex bg-green-500 justify-between items-center fixed p-5 lg:px-10">
         <span className="text-2xl text-white font-bold">Logo</span>
