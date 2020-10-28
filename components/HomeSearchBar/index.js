@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import config from '../../config';
 import style from './searchBar.module.css'
 const HomeSearchBar = () => {
   const [keyword, setKeyword] = useState(null);
   const onPress = () => {
-    window.location.href = 'http://sewaweb.vercel.app/janfalih/' + keyword;
+    window.location.href = config.BASE_URL + '/janfalih/' + keyword;
   }
     return(
       <>

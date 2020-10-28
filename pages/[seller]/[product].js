@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import NavReview from '../../components/NavReview'
 import { Link, Element } from 'react-scroll'
 import ProductCard from '../../components/ProductCard'
+import Button from '../../components/Button'
 const FaqData = [{
     id: 1,
     question: "Jakarta itu kota atau provinsi?",
@@ -25,6 +26,7 @@ const Product = () => {
     const { seller, product } = router.query;
     const  scrollLeft = useRef(null);
     const [isFade, setFade] = useState(false);
+    const [isFooterEvnet, setFooterEvent] = useState(false);
     const [image, setImage] = useState({
         name: 'pemandanganLqip',
         url : require('../../public/gambar/pemandangan.jpg?lqip')});
@@ -35,7 +37,7 @@ const Product = () => {
 
     }, [setImage])
     const GalleryComponent = ({onClick, isActive}) => (
-        <li className="rounded-full self-center"
+        <a className="rounded-full self-center"
 			style={{
                 width: isActive ? "12px" : "8px",
                 height: isActive ? "12px" : "8px",
@@ -45,7 +47,7 @@ const Product = () => {
 			}}
 			onClick={onClick}
 		>
-            </li>
+            </a>
     )
     const onScroll = () => {
         if(window.pageYOffset > 100){
@@ -55,12 +57,13 @@ const Product = () => {
         }   
     }
     
-    const handleSetActive = () => {
-
-    }
     useEffect(() => {
         window.addEventListener('scroll', () => onScroll())
     })
+    const animateFooter = {
+        open: { bottom: -340},
+        closed: {bottom: 0}
+    }
     const animateBackButton = {
         open: { opacity: 1, display: 'block' },
         closed: { opacity: 0,  transitionEnd: {
@@ -102,22 +105,23 @@ const Product = () => {
             </div>
             <div className="sticky z-10 top-0 flex flex-col w-full border-b bg-white px-5 py-2 lg:px-10">
                 <div className="flex justify-between py-2 items-center">
-                    <motion.button
+                    <motion.Button
+                        onClick={() => router.back()}
                         initial="closed" 
                         transition={{ duration: 0.5 }}
                         animate={isFade ? "open" : "closed"}
-                        variants={animateBackButton} className="bg-white shadow w-10 h-10 flex-none mr-3 rounded-full"><i className="fa fa-arrow-left"></i></motion.button>
-                    <div className="lg:w-2/6 w-full">
+                        variants={animateBackButton} className="bg-white shadow w-10 h-10 flex-none mr-3 rounded-full"><i class="ri-md ri-arrow-left-line"></i></motion.Button>
+                    <div className="lg:w-3/6 w-full">
                         <span className="text-xs font-semibold">{isFade ? 'IsFade' : 'Is Not Fade'} > Category > Product</span>
                         <h1 className="font-bold text-base">{ product }</h1>
                     </div>
-                    <div className="w-4/6 hidden lg:flex justify-around items-center">
-                    <div className="w-3/6 flex justify-around ">
-                        <button className="bg-green-500 text-white font-semibold text-sm px-5 py-1 rounded shadow"><i className="fa fa-heart"></i> Loved!</button>
-                        <button className="bg-green-500 text-white font-semibold text-sm px-5 py-1 rounded shadow"><i className="fa fa-heart"></i> Loved!</button>
-                        <button className="bg-green-500 text-white font-semibold text-sm px-5 py-1 rounded shadow"><i className="fa fa-heart"></i> Loved!</button>
-                    </div>
-                    <div className="w-3/6 flex justify-around">
+                    <div className="w-3/6 hidden lg:flex items-center">
+                        <div className="w-3/6 flex mr-3 justify-around ">
+                            <button className="bg-green-500 text-white font-semibold text-sm px-5 py-1 rounded shadow"><i className="fa fa-heart"></i> Loved!</button>
+                            <button className="bg-green-500 text-white font-semibold text-sm px-5 py-1 rounded shadow"><i className="fa fa-heart"></i> Loved!</button>
+                            <button className="bg-green-500 text-white font-semibold text-sm px-5 py-1 rounded shadow"><i className="fa fa-heart"></i> Loved!</button>
+                        </div>
+                        <div className="w-3/6 flex ml-3 justify-between">
                     <div className="w-auto flex items-center h-auto">
                             <div className="relative mr-2 w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gray-500">
                                 <div className="absolute rounded-full right-0 w-4 h-4 lg:w-4 lg:h-4 bg-green-500 border-4 border-white"></div>
@@ -129,18 +133,18 @@ const Product = () => {
                         </div>
                         <button className="shadow-lg text-xs  hover:bg-green-700 bg-green-500 rounded text-white font-semibold p-2">Contact Seller</button>
                     </div>
-                </div>
+                    </div>
                 </div>
                 <motion.div 
                         initial="closed" 
                         transition={{ duration: 0.5 }}
                         animate={isFade ? "open" : "closed"}
                         variants={animateBackButton} className="relative flex items-center text-sm text-gray-500 w-full rounded lg:hidden">
-                    <span className="absolute p-2"><i className="fa fa-search"></i></span>
+                    <span className="absolute flex items-center p-2"><i class="ri-search-2-line"></i></span>
                     <input type="search" placeholder="Cari Disini" className="w-full font-semibold py-2 pr-5 pl-8 bg-gray-200 rounded"></input>
                 </motion.div>
             </div>
-            <div  className="flex lg:flex-row flex-col p-5  lg:px-10">
+            <div  className="flex lg:flex-row flex-col p-5 lg:px-10">
                 <div className="lg:w-4/6 w-full mb-4 lg:mr-5">
                     <div className="w-full h-32 mb-4 md:h-64 cursor-pointer">
                         <Slider 
@@ -153,13 +157,7 @@ const Product = () => {
                                 <img src="/gambar/pemandangan.jpg" className="h-full w-full"/>
                         </Slider>
                     </div>
-                    <div ref={scrollLeft} style={{top:130}} className=" w-full z-10 mb-4 text-sm overflow-x-auto font-semibold bg-white sticky flex flex-row justify-between items-center shadow rounded">
-                        <Link activeClass="border-b-4 border-green-400" isDynamic={true} offset={-190} className="px-5 py-2 text-center w-full" to="test1" spy={true} onSetActive={() => handleSetActive()} smooth={true}>Deskripsi</Link>
-                        <Link activeClass="border-b-4 border-green-400" isDynamic={true} offset={-190} className="px-5 py-2 text-center w-full" to="test2" spy={true} onSetActive={() => handleSetActive()} smooth={true}>Paket</Link>
-                        <Link activeClass="border-b-4 border-green-400" isDynamic={true} offset={-190} className="px-5 py-2 text-center w-full" to="test3" spy={true} smooth={true}>Rekomendasi</Link>
-                        <Link activeClass="border-b-4 border-green-400" isDynamic={true} offset={-190} className="px-5 py-2 text-center w-full" to="test4" spy={true} smooth={true}>Reviews</Link>
-                        <Link activeClass="border-b-4 border-green-400" isDynamic={true} offset={-190} className="px-5 py-2 text-center w-full" to="test5" spy={true} smooth={true}>Faq</Link>
-                    </div>
+                    <NavReview/>
                     <Element className="w-full mb-4 " id="test1">
                         <h1 className="text-lg font-bold mb-2">Dijual website panel smm murah berkualitas</h1>
                         <p className="text-sm"><b>Lorem ipsum dolor sit amet</b>,
@@ -200,7 +198,7 @@ const Product = () => {
                         ))}
                 </Element>
                 </div>
-                <div style={{top:130}} className="w-2/6 h-64 sticky hidden lg:block ml-5">
+                <div style={{top:125}} className="w-2/6 h-64 sticky hidden lg:block ml-5">
                     <div className="w-full h-auto mb-5 border p-3">
                         <div className="relative flex">
                             <input className="m-2" type="radio"></input>
@@ -219,7 +217,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <motion.div  style={{height:400, bottom:-340}} drag="y" dragElastic={0}  dragConstraints={{ left: 0, top:-340, bottom:0, right: 0 }} className="fixed z-20 w-full border-t px-5 py-2 rounded-t-lg lg:hidden bg-white justify-between">
+            <motion.div animate={isFooterEvnet ? "open" : "closed"} variants={animateFooter} onDragEnd={() => setFooterEvent(!isFooterEvnet)}  style={{height:400, bottom:-340}} drag="y" dragElastic={0.2}  dragConstraints={{ left: 0, top:0, bottom:0, right: 0 }} className="fixed z-20 w-full border-t px-5 py-2 rounded-t-lg lg:hidden bg-white justify-between">
                     <div style={{height:3, top:5}} className="absolute w-10 rounded-full mr-auto ml-auto right-0 left-0 bg-gray-400"></div>
                     <div className="w-full flex items-center justify-between h-auto">
                         <div className="w-auto flex items-center h-auto">
@@ -231,7 +229,7 @@ const Product = () => {
                                 <span className="font-semibold text-orange-500 text-xs ">Top Seller</span>
                             </div>
                         </div>
-                        <button className="shadow-lg text-xs  hover:bg-green-700 bg-green-500 rounded text-white font-semibold p-2">Contact Seller</button>
+                        <Button color="green" text="Contact Seller" onClick={console.log('hello')}/>
                     </div>
             </motion.div>
         </div>
