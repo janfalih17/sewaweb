@@ -10,6 +10,7 @@ import NavReview from '../../components/NavReview'
 import { Link, Element } from 'react-scroll'
 import ProductCard from '../../components/ProductCard'
 import Button from '../../components/Button'
+import ContactFooter from '../../components/ContactFooter'
 const FaqData = [{
     id: 1,
     question: "Jakarta itu kota atau provinsi?",
@@ -26,7 +27,7 @@ const Product = () => {
     const { seller, product } = router.query;
     const  scrollLeft = useRef(null);
     const [isFade, setFade] = useState(false);
-    const [isFooterEvnet, setFooterEvent] = useState(false);
+    const [isFooterEvnet, setFooterEvent] = useState(true);
     const [image, setImage] = useState({
         name: 'pemandanganLqip',
         url : require('../../public/gambar/pemandangan.jpg?lqip')});
@@ -56,7 +57,11 @@ const Product = () => {
             setFade(false);
         }   
     }
-    
+    const footerDrag = (axis) => {
+        if(axis === "y") {
+            setFooterEvent(!isFooterEvnet)
+        }
+    }
     useEffect(() => {
         window.addEventListener('scroll', () => onScroll())
     })
@@ -217,21 +222,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <motion.div animate={isFooterEvnet ? "open" : "closed"} variants={animateFooter} onDragEnd={() => setFooterEvent(!isFooterEvnet)}  style={{height:400, bottom:-340}} drag="y" dragElastic={0.2}  dragConstraints={{ left: 0, top:0, bottom:0, right: 0 }} className="fixed z-20 w-full border-t px-5 py-2 rounded-t-lg lg:hidden bg-white justify-between">
-                    <div style={{height:3, top:5}} className="absolute w-10 rounded-full mr-auto ml-auto right-0 left-0 bg-gray-400"></div>
-                    <div className="w-full flex items-center justify-between h-auto">
-                        <div className="w-auto flex items-center h-auto">
-                            <div className="relative mr-2 w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-gray-500">
-                                <div className="absolute rounded-full right-0 w-4 h-4 lg:w-5 lg:h-5 bg-green-500 border-4 border-white"></div>
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-semibold text-sm">{ seller }</span>
-                                <span className="font-semibold text-orange-500 text-xs ">Top Seller</span>
-                            </div>
-                        </div>
-                        <Button color="green" text="Contact Seller" onClick={console.log('hello')}/>
-                    </div>
-            </motion.div>
+            <ContactFooter/>
         </div>
     )
 }
