@@ -3,9 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import HomeSearchBar from '../../components/HomeSearchBar';
 import config from '../../config';
-import Button from '../../components/Button'
-import ProductCard from '../../components/ProductCard';
-import Navbar from '../../components/NavBar';
+import Navbar from '../../components/Navbar';
 import ListCard from '../../components/ListCard';
 const Search = () => { 
     const router = useRouter();
