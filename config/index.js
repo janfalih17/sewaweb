@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://sewaweb.vercel.app/";
 const API_URL = "http://localhost:7000";
 const SITE_NAME = "FIVERR";
 const config = {
