@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar sidebar={sidebar} onClick={() => setSidebar(!sidebar)}/>
       <div className="relative mb-20 h-64 w-full flex justify-center items-center bg-green-500">
         <h1 className="text-xl lg:text-4xl text-white text-center font-bold">
-          Punya <i className="font-medium">Website</i> Dan <i className="font-medium">Aplikasi</i><br/>Dengan Mudah Disini
+          Punya <i className="font-medium">Coba</i> Dan <i className="font-medium">Aplikasi</i><br/>Dengan Mudah Disini
         </h1>
         <HomeSearchBar populer placeholder="Cari Disini..."/>
       </div>
