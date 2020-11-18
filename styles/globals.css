@@ -1,5 +1,4 @@
 html{
-  
   scroll-behavior: smooth;
 }
 html,
@@ -18,4 +17,7 @@ a {
 
 * {
   box-sizing: border-box;
+}
+button:focus{
+  outline: none;
 }

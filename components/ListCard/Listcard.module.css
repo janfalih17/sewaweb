@@ -1,0 +1,3 @@
+.listcard{
+    @apply block w-full pb-3 mb-3 border-b
+}
