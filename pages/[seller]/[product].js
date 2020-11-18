@@ -2,17 +2,12 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useRef } from 'react'
-import {useSprings, animated} from 'react-spring'
-import { useDrag, useGesture } from 'react-use-gesture'
 import Slider from '@farbenmeer/react-spring-slider'
-import Head from 'next/head'
 import { motion } from 'framer-motion'
 import NavReview from '../../components/NavReview'
-import { Link, Element } from 'react-scroll'
+import { Element } from 'react-scroll'
 import ProductCard from '../../components/ProductCard'
-import Button from '../../components/Button'
 import ContactFooter from '../../components/ContactFooter'
-import Navbar from '../../components/NavBar'
 const FaqData = [{
     id: 1,
     question: "Jakarta itu kota atau provinsi?",
